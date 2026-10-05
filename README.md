@@ -12,9 +12,9 @@ The store is deployed on Netlify Free. The FOBE BOOKS Supabase project has all f
 
 The signed Android APK is served at `/downloads/greater-height-books-android.apk`. Its source is in `android/`. The APK wraps the existing `/mobile` PWA as a Trusted Web Activity. The website and Android app use the same deployed origin, Supabase Google account, and Supabase cart API. The domain association is in `public/.well-known/assetlinks.json`.
 
-The cart subscribes to Supabase Realtime for the signed-in user's inserted and updated cart rows. It fetches the latest database cart after each event. Returning to the app reloads the cart, including removals made while it was in the background. The service worker provides an offline explanation page but does not cache account, cart, checkout, or payment responses.
+The cart subscribes to Supabase Realtime for the signed-in user's inserted and updated cart rows. It fetches the latest database cart after each event, and the visible cart refreshes every 1.5 seconds if the live connection misses an event. Returning to the app reloads the cart, including removals made while it was in the background. The service worker provides an offline explanation page but does not cache account, cart, checkout, or payment responses.
 
-For the required physical-phone video, install the **APK** on Android and follow `docs/LESSON3_DEMO.md`. The owner previously confirmed website-to-installed-PWA cart sync on a physical phone. The separately packaged APK still needs its own install, login, and two-way cart test.
+For the required physical-phone video, install the **APK** on Android and follow `docs/LESSON3_DEMO.md`. The owner installed the signed APK on a physical Android phone, signed in with Google, and confirmed automatic website-to-app and app-to-website cart synchronization.
 
 The APK was generated and signed by PWABuilder from the deployed web manifest. Its signing keystore and password file are retained locally under ignored `work/android-signing/`; never commit or publish them. `android/` contains the generated Gradle project without signing credentials or build outputs. Future APK updates must use the same signing key and increment the Android version code. The APK and website remain dependent on the deployed HTTPS store; a browser with Trusted Web Activity support is required on the phone.
 
