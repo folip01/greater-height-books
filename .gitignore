@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.netlify/
+.env*
+!.env.example
+work/
+outputs/
+*.tsbuildinfo
+android/.gradle/
+android/build/
+android/app/build/
+android/signingKey.keystore

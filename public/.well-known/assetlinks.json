@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.greaterheightbooks.app",
+        "sha256_cert_fingerprints": ["C2:66:7D:35:C1:41:01:98:B2:15:DA:DB:DB:39:8B:2C:46:EF:61:58:E6:F0:9C:67:18:36:10:08:01:8E:C8:7E"]
+      }
+    }]
